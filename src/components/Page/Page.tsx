@@ -1,22 +1,24 @@
-import React, {Component} from 'react';
+import React from 'react';
+import {cn} from '@bem-react/classname';
+
 import './Page.scss';
 
-class Page extends Component {
-  render() {
-    return (
-      <div className="page">
-        <div className="page__header">
+const cnPage = cn('Page');
 
-        </div>
-        <div className="page__content">
+const Page = () => {
+  return (
+    <>
+      <div className={cnPage('Header')}>
 
-        </div>
-        <div className="page__footer">
-
-        </div>
       </div>
-    );
-  }
-}
+      <div className={cnPage('Content')}>
+
+      </div>
+      <div className={cnPage('Footer')}>
+
+      </div>
+    </>
+  );
+};
 
 export default Page;
