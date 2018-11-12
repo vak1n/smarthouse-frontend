@@ -2,6 +2,8 @@ import React from 'react';
 import {cn} from '@bem-react/classname';
 
 import Logo from '../Logo/Logo'
+import Menu from '../Menu/Menu'
+import {menu} from '../../const/menu';
 
 import './Header.scss';
 
@@ -14,6 +16,7 @@ const Header = () => {
         <Logo/>
       </div>
       <div className={cnHeader('Menu')}>
+        <Menu type={'header'} links={menu.links}/>
       </div>
     </header>
   );
