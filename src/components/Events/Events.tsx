@@ -39,6 +39,7 @@ export default class Events extends Component<{}, IEventsSate> {
           description={event.description}
           icon={event.icon}
           size={event.size}
+          data={event.data}
         />
       </div>
     );

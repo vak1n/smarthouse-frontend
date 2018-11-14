@@ -2,6 +2,8 @@ import React from 'react';
 import IEventData from '../../interfaces/IEventData';
 import {cn} from '@bem-react/classname';
 
+import Graph from '../Graph/Graph'
+
 import './Event.scss';
 
 const cnEvent = cn('Event');
@@ -28,10 +30,15 @@ const Event = (event: IEventData) => {
       {(event.description || event.data) &&
       <div className={cnEvent('Data-container')}>
         <div className={cnEvent('Data')}>
-          { event.description &&
-            <div className={cnEvent('Description', {size: event.size})}>
-              {event.description}
-            </div>
+          {event.description &&
+          <div className={cnEvent('Description', {size: event.size})}>
+            {event.description}
+          </div>
+          }
+          {event.data && event.data.type &&
+          <div className={cnEvent('Graph')}>
+            <Graph/>
+          </div>
           }
         </div>
       </div>
