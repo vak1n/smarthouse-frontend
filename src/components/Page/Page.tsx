@@ -15,7 +15,7 @@ const Page = () => {
         <Header/>
       </div>
       <div className={cnPage('Content')}>
-
+        <h1 className={cnPage('Title')}>Лента событий</h1>
       </div>
       <div className={cnPage('Footer')}>
         <Footer/>
