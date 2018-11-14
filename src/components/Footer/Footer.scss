@@ -1,0 +1,37 @@
+@import "../../variables";
+@import "../../mixins/rem";
+
+.Footer {
+  @media #{$desktop } {
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  @media #{$tablet} {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: 64px;
+    align-items: center;
+  }
+
+  &-Menu {
+    @media #{$tablet} {
+      grid-column-start: 1;
+      justify-self: left;
+    }
+  }
+
+  &-Copyright {
+    font-family: $font__main;
+    font-size: 12px;
+    color: #858585;
+    margin-bottom: 10px;
+
+    @media #{$tablet} {
+      grid-column-start: 2;
+      margin-bottom: 0;
+      justify-self: right;
+    }
+  }
+}

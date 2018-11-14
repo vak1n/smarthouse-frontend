@@ -2,6 +2,7 @@ import React from 'react';
 import {cn} from '@bem-react/classname';
 
 import Header from '../Header/Header'
+import Footer from '../Footer/Footer'
 
 import './Page.scss';
 
@@ -17,7 +18,7 @@ const Page = () => {
 
       </div>
       <div className={cnPage('Footer')}>
-
+        <Footer/>
       </div>
     </>
   );

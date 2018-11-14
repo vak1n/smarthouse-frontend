@@ -2,7 +2,7 @@ import React from 'react';
 import {cn} from '@bem-react/classname';
 
 import Logo from '../Logo/Logo'
-import Menu from '../Menu/Menu'
+import {Menu} from '../Menu'
 import {menu} from '../../const/menu';
 
 import './Header.scss';
