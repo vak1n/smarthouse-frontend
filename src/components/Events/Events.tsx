@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import IEventData from '../../interfaces/IEventData';
 import {cn} from '@bem-react/classname';
 
+import Event from '../Event/Event'
+
 import './Events.scss';
 
 const cnEvents = cn('Events');
@@ -28,7 +30,16 @@ export default class Events extends Component<{}, IEventsSate> {
 
   render() {
     const events = this.state.events.map((event, index) =>
-      <div className="events__event event" key={index}>
+      <div className={cnEvents('Event', {type: event.size}, ['Event'])} key={index}>
+        <Event
+          type={event.type}
+          title={event.title}
+          source={event.source}
+          time={event.time}
+          description={event.description}
+          icon={event.icon}
+          size={event.size}
+        />
       </div>
     );
 
