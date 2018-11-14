@@ -6,6 +6,7 @@ import Graph from '../Graph/Graph'
 import Microclimate from '../Microclimate/Microclimate'
 import Media from '../Media/Media'
 import {Button} from '../Button'
+import Walle from '../Walle/Walle'
 
 import './Event.scss';
 
@@ -67,6 +68,11 @@ const Event = (event: IEventData) => {
                 {event.data.buttons[1]}
               </Button>
             </div>
+          </div>
+          }
+          {event.data && event.data.image &&
+          <div className={cnEvent('Walle')}>
+            <Walle/>
           </div>
           }
         </div>
