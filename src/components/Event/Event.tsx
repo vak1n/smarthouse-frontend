@@ -4,6 +4,7 @@ import {cn} from '@bem-react/classname';
 
 import Graph from '../Graph/Graph'
 import Microclimate from '../Microclimate/Microclimate'
+import Media from '../Media/Media'
 
 import './Event.scss';
 
@@ -44,6 +45,15 @@ const Event = (event: IEventData) => {
           {event.data && event.data.temperature && event.data.humidity &&
           <div className={cnEvent('Microclimate')}>
             <Microclimate temperature={event.data.temperature} humidity={event.data.humidity}/>
+          </div>
+          }
+          {event.data && event.data.albumcover && event.data.artist && event.data.track && event.data.volume &&
+          <div className={cnEvent('Media')}>
+            <Media
+              albumcover={event.data.albumcover}
+              artist={event.data.artist}
+              track={event.data.track}
+              volume={event.data.volume}/>
           </div>
           }
         </div>
