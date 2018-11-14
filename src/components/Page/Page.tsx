@@ -3,6 +3,7 @@ import {cn} from '@bem-react/classname';
 
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
+import Events from '../Events/Events'
 
 import './Page.scss';
 
@@ -16,6 +17,7 @@ const Page = () => {
       </div>
       <div className={cnPage('Content')}>
         <h1 className={cnPage('Title')}>Лента событий</h1>
+        <Events/>
       </div>
       <div className={cnPage('Footer')}>
         <Footer/>
