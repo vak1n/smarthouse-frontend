@@ -5,6 +5,7 @@ import {cn} from '@bem-react/classname';
 import Graph from '../Graph/Graph'
 import Microclimate from '../Microclimate/Microclimate'
 import Media from '../Media/Media'
+import {Button} from '../Button'
 
 import './Event.scss';
 
@@ -54,6 +55,18 @@ const Event = (event: IEventData) => {
               artist={event.data.artist}
               track={event.data.track}
               volume={event.data.volume}/>
+          </div>
+          }
+          {event.data && event.data.buttons &&
+          <div className={cnEvent('Buttons')}>
+            <div className={cnEvent('ButtonsWrapper')}>
+              <Button theme={'yellow'}>
+                {event.data.buttons[0]}
+              </Button>
+              <Button theme={'grey'}>
+                {event.data.buttons[1]}
+              </Button>
+            </div>
           </div>
           }
         </div>
