@@ -1,24 +1,37 @@
-import React, {Component} from 'react'
+import React, {Component, createRef, RefObject} from 'react'
+import {ITouch, Touch} from '../../modules/Touch';
 import {cn} from '@bem-react/classname';
 
 import './Walle.scss';
 
 const cnWalle = cn('Walle');
 
-interface IWalleState {
+export default class Walle extends Component<{}> {
+  imgNode: RefObject<HTMLImageElement>;
+  zoomNode: RefObject<HTMLInputElement>;
+  brightnessNode: RefObject<HTMLInputElement>;
+  touch: ITouch | null;
 
-}
-
-export default class Walle extends Component<{}, IWalleState> {
   constructor(props: {}) {
     super(props);
+    this.imgNode  = createRef<HTMLImageElement>();
+    this.zoomNode = createRef<HTMLInputElement>();
+    this.brightnessNode = createRef<HTMLInputElement>();
+    this.touch = null;
+  }
+
+  componentDidMount() {
+    if (this.imgNode.current && this.zoomNode.current && this.brightnessNode.current) {
+      this.touch = new Touch(this.imgNode.current, this.zoomNode.current, this.brightnessNode.current);
+      this.touch.init();
+    }
   }
 
   render() {
     return (
       <div className={cnWalle()}>
         <div className={cnWalle('ImgContianer')} touch-action="none">
-          <img className={cnWalle('Img')} touch-action="none"
+          <img ref={this.imgNode} className={cnWalle('Img')} touch-action="none"
                sizes="(max-width: 2496px) 100vw, 2496px"
                srcSet="
                     assets/robot_em9jpf_c_scale,w_580.jpg 580w,
@@ -39,12 +52,14 @@ export default class Walle extends Component<{}, IWalleState> {
           <div className={cnWalle('Zoom')}>
             <span className={cnWalle('ValueName')}>Приближение:</span>
             <span className={cnWalle('Value', {zoom: true})}>0</span>
-            <input className={cnWalle('Range', {zoom: true})} type="range" min="0" max="100" value="0"/>
+            <input ref={this.zoomNode} className={cnWalle('Range', {zoom: true})}
+                   type={'range'} min={'0'} max={'100'} defaultValue={'0'}/>
           </div>
           <div className={cnWalle('Brightness')}>
             <span className={cnWalle('ValueName')}>Яркость:</span>
             <span className={cnWalle('Value', {brightness: true})}>100</span>
-            <input className={cnWalle('Range', {brightness: true})} type="range" min="0" max="200" value="100"/>
+            <input ref={this.brightnessNode} className={cnWalle('Range', {brightness: true})}
+                   type={'range'} min={'0'} max={'200'} defaultValue={'100'}/>
           </div>
         </div>
       </div>
