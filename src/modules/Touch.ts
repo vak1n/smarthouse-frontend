@@ -2,7 +2,8 @@ export interface ITouch {
   imgNode: HTMLImageElement;
   zoomNode: HTMLInputElement;
   brightnessNode: HTMLInputElement;
-  init(): void;
+  initTouch(): void;
+  initDesktop(): void;
 }
 
 export class Touch implements ITouch {
@@ -30,7 +31,7 @@ export class Touch implements ITouch {
     this.angle = 0;
   }
 
-  public init(): void {
+  public initTouch(): void {
     this.imgNode.addEventListener('pointerdown', (ev) => {
       this.downHandler(ev);
     });
@@ -49,7 +50,9 @@ export class Touch implements ITouch {
     this.imgNode.addEventListener('pointerleave', (ev) => {
       this.upHandler(ev);
     });
+  }
 
+  public initDesktop(): void {
     this.zoomNode.addEventListener('input', (ev) => {
       this.zoom = Number(this.zoomNode.value);
       this.setStyle();

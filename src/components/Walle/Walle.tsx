@@ -4,9 +4,9 @@ import {cn} from '@bem-react/classname';
 
 import './Walle.scss';
 
-const cnWalle = cn('Walle');
+export const cnWalle = cn('Walle');
 
-export default class Walle extends Component<{}> {
+export class Walle extends Component<{}> {
   imgNode: RefObject<HTMLImageElement>;
   zoomNode: RefObject<HTMLInputElement>;
   brightnessNode: RefObject<HTMLInputElement>;
@@ -18,13 +18,6 @@ export default class Walle extends Component<{}> {
     this.zoomNode = createRef<HTMLInputElement>();
     this.brightnessNode = createRef<HTMLInputElement>();
     this.touch = null;
-  }
-
-  componentDidMount() {
-    if (this.imgNode.current && this.zoomNode.current && this.brightnessNode.current) {
-      this.touch = new Touch(this.imgNode.current, this.zoomNode.current, this.brightnessNode.current);
-      this.touch.init();
-    }
   }
 
   render() {
@@ -65,4 +58,4 @@ export default class Walle extends Component<{}> {
       </div>
     )
   }
-};
+}
