@@ -32,7 +32,7 @@
         }
       }
 
-      & .Event-Data-container {
+      & .Event-DataContainer {
         background: #F3F3F3;
       }
     }
@@ -489,7 +489,7 @@
     height: 100%;
     align-items: end;
 
-    &-container {
+    &Container {
       grid-column-start: 1;
       grid-row-start: 2;
       background: #FAFAFA;

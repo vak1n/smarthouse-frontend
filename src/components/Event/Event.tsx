@@ -39,7 +39,7 @@ const Event = (event: IEventData) => {
               </div>
             </div>
             {(event.description || event.data) &&
-            <div className={cnEvent('Data-container')}>
+            <div className={cnEvent('DataContainer')}>
               <div className={cnEvent('Data')}>
                 {event.description &&
                 <div className={cnEvent('Description', {size: event.size})}>

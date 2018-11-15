@@ -13,7 +13,7 @@ const cnMicroclimate = cn('Microclimate');
 const Microclimate = (props: IMicroclimateProps) => (
   <div className={cnMicroclimate()}>
     <div className={cnMicroclimate('Temperature')}>
-      <span className={cnMicroclimate('Value-name')}>
+      <span className={cnMicroclimate('ValueName')}>
         Температура:
       </span>
       <span className={cnMicroclimate('Value', {temperature: true})}>
@@ -21,7 +21,7 @@ const Microclimate = (props: IMicroclimateProps) => (
       </span>
     </div>
     <div className={cnMicroclimate('Humidity')}>
-      <span className={cnMicroclimate('Value-name')}>Влажность:</span>
+      <span className={cnMicroclimate('ValueName')}>Влажность:</span>
       <span className={cnMicroclimate('Value', {humidity: true})}>
         {props.humidity}
       </span>

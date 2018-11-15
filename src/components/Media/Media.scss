@@ -190,11 +190,6 @@
     }
   }
 
-  &-Time-value {
-    grid-column-start:  4;
-    grid-row-start: 2;
-  }
-
   &-Prev {
     grid-column-start: 1;
     grid-row-start: 3;
@@ -376,7 +371,7 @@
     }
   }
 
-  &-Time-value {
+  &-TimeValue {
     grid-column-start: 4;
     grid-row-start:  2;
     font-family: $font__main;
@@ -390,7 +385,7 @@
     }
   }
 
-  &-Volume-value {
+  &-VolumeValue {
     grid-column-start: 4;
     grid-row-start:  3;
     font-family: $font__main;

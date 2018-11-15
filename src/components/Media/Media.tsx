@@ -22,13 +22,13 @@ const Media = (props: IMediaProps) => (
       {`${props.artist} - ${props.track.name}`}
     </div>
     <input className={cnMedia('Time')} type={'range'}/>
-    <label className={cnMedia('Time-value')}>
+    <label className={cnMedia('TimeValue')}>
       {props.track.length}
     </label>
     <button className={cnMedia('Prev')}/>
     <button className={cnMedia('Next')}/>
     <input className={cnMedia('Volume')} type={'range'}/>
-    <label className={cnMedia('Volume-value')}>
+    <label className={cnMedia('VolumeValue')}>
       {props.volume}
     </label>
   </div>
