@@ -1,0 +1,27 @@
+$font__main:  ArialMT;
+$font__main--bold:  Arial-BoldMT;
+
+$font__size--mobile: 16px;
+$font__size--mobile--big: 18px;
+$font__size--tablet: 20px;
+$font__size--tablet--big: 22px;
+$font__size--desktop: 24px;
+
+$color__text: #333333;
+$color__background: #ffffff;
+
+$screen__mobile: 0em;
+$screen__mobile--big: 576px;
+$screen__tablet: 768px;
+$screen__tablet--big: 992px;
+$screen__desktop: 1200px;
+
+$mobile: "(min-width: #{$screen__mobile})";
+$mobile--big: "(min-width: #{$screen__mobile--big})";
+$tablet: "(min-width: #{$screen__tablet})";
+$tablet--big: "(min-width: #{$screen__tablet--big})";
+$desktop: "(min-width: #{$screen__desktop})";
+
+$mobile--only: "(min-width: #{$screen__mobile}) and (max-width: #{$screen__mobile--big})";
+$tablet--only: "(min-width: #{$screen__tablet}) and (max-width: #{$screen__tablet--big})";
+$desktop--only: "(min-width: #{$screen__desktop})";

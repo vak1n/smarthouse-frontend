@@ -1,0 +1,57 @@
+@import "../../variables";
+@import "../../mixins/rem";
+
+.Events {
+  display: grid;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  margin-bottom: 20px;
+
+  @media #{$mobile--big} {
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-flow: row dense;
+    grid-template-rows: auto;
+  }
+
+  @media #{$tablet} {
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-flow: row dense;
+    grid-template-rows: auto;
+  }
+
+  &-Event {
+    @media #{$mobile--big} {
+      &_type_s {
+        grid-column: span 2;
+        grid-row: span 1;
+      }
+
+      &_type_m {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+
+      &_type_l {
+        grid-column: span 4;
+        grid-row: span 3;
+      }
+    }
+
+    @media #{$tablet} {
+      &_type_s {
+        grid-column: span 2;
+        grid-row: span 1;
+      }
+
+      &_type_m {
+        grid-column: span 3;
+        grid-row: span 2;
+      }
+
+      &_type_l {
+        grid-column: span 4;
+        grid-row: span 3;
+      }
+    }
+  }
+}

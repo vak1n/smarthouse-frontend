@@ -1,0 +1,49 @@
+@import "../../variables";
+@import "../../mixins/rem";
+
+.Microclimate {
+  display: grid;
+  grid-template-columns: 50% 50%;
+
+  &-Temperature {
+    grid-column-start: 1;
+    justify-self: left;
+  }
+
+  &-Humidity {
+    grid-column-start: 2;
+    justify-self: right;
+
+    @media #{$desktop} {
+      justify-self: left;
+    }
+  }
+
+  &-ValueName {
+    font-family: $font__main;
+    font-size: rem(14px);
+    color: #000000;
+
+    @media #{$tablet--only} {
+      font-size: rem(12px);
+    }
+  }
+
+  &-Value {
+    font-family: $font__main--bold;
+    font-size: rem(14px);
+    color: #000000;
+
+    @media #{$tablet--only} {
+      font-size: rem(12px);
+    }
+
+    &_temperature::after {
+      content: 'C';
+    }
+
+    &_humidity:after {
+      content: '%';
+    }
+  }
+}

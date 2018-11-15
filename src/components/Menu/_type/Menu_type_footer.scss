@@ -1,0 +1,21 @@
+@import "../../../mixins/rem";
+@import "../../../variables";
+
+.Menu {
+  &-Item {
+    &_type_footer {
+      display: inline-block;
+      margin-right: 3px;
+    }
+  }
+
+  &-Link {
+    &_type_footer {
+      font-family: $font__main;
+      font-size: 12px;
+      color: #858585;
+      line-height: 1;
+      opacity: 1;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+@import "../../variables";
+@import "../../mixins/rem";
+
+.Button {
+  border-radius: 8px;
+  max-width: 132px;
+  height: 44px;
+  font-family: $font__main--bold;
+  font-size: 20px;
+  color: #000000;
+  border: none;
+  cursor: pointer;
+}

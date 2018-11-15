@@ -1,0 +1,560 @@
+@import "../../variables";
+@import "../../mixins/rem";
+
+.Event {
+  display: grid;
+  border-radius: 20px;
+  background: #FAFAFA;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 100%;
+
+  &_control {
+    @media #{$mobile} {
+      grid-template-rows: auto minmax(0, 30px);
+    }
+
+    @media #{$tablet} {
+      grid-template-rows: auto 1fr;
+    }
+  }
+
+
+  @media #{$desktop--only} {
+    &:hover {
+      box-shadow: 0 2px 6px 0 rgba(197, 186, 186, 0.50);
+      background: #F3F3F3;
+
+      & .Event-Info {
+        background: #F3F3F3;
+
+        &_critical {
+          background: #db3e22;
+        }
+      }
+
+      & .Event-DataContainer {
+        background: #F3F3F3;
+      }
+    }
+  }
+
+  &-Controls {
+    grid-column-start: 1;
+    grid-row: 1/3;
+    position: relative;
+
+    @media #{$desktop--only} {
+      visibility: hidden;
+      grid-row: 1/3;
+    }
+
+    &:hover {
+      visibility: visible;
+    }
+  }
+
+  &-Control {
+    border-radius: 10px;
+  }
+
+  &-Close {
+    cursor: pointer;
+    border: none;
+    background: url("./icons/cross.svg") center center no-repeat;
+    position: absolute;
+    height: 11px;
+    width: 11px;
+    top: 18px;
+    right: 18px;
+
+    @media #{$tablet} {
+      height: 13px;
+      width: 13px;
+      top: 20px;
+      right: 22px;
+    }
+
+    @media #{$desktop} {
+      height: 15px;
+      width: 15px;
+      top: 22px;
+      right: 22px;
+    }
+  }
+
+  &-Link {
+    cursor: pointer;
+    text-decoration: none;
+    background: url("./icons/Next.svg") center center no-repeat;
+    position: absolute;
+    height: 13px;
+    width: 7px;
+    bottom: 18px;
+    right: 18px;
+
+    @media #{$mobile} {
+      height: 15px;
+      width: 9px;
+      bottom: 20px;
+      right: 20px;
+    }
+
+    @media #{$desktop} {
+      height: 17px;
+      width: 11px;
+      bottom: 22px;
+      right: 22px;
+    }
+  }
+
+  &-Info {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    border-radius: 20px;
+    background: #FAFAFA;
+    padding: 25px 18px 20px 18px;
+    align-self: start;
+
+    &_critical {
+      background: #DB5341;
+      color: #ffffff;
+      border-radius: 20px 20px 0 0;
+      padding: 25px 18px 40px 18px;
+    }
+  }
+
+  &-Wrapper {
+    display: grid;
+    grid-template-columns: repeat(10, 10%);
+    border-radius: 20px;
+  }
+
+  &-Icon {
+    grid-column-start: 1;
+    align-self: center;
+    height: 100%;
+    width: 100%;
+
+    &_size_s {
+      @media #{$mobile--big} {
+        grid-column: 1/2;
+      }
+    }
+
+    &_size_m {
+      @media #{$mobile--big} {
+        grid-column: 1/2;
+      }
+      @media #{$tablet--big} {
+        grid-column: 1;
+      }
+    }
+
+    &_size_l {
+      @media #{$tablet} {
+        grid-column-start: 1;
+      }
+    }
+
+    &_icon_stats {
+      background: url("./icons/stats.svg") no-repeat;
+      height: 17px;
+      width: 35px;
+
+      @media #{$tablet} {
+        height: 23px;
+        width: 48px;
+      }
+
+      &_white {
+        background: url("./icons/stats-white.svg") no-repeat;
+        height: 17px;
+        width: 35px;
+
+        @media #{$tablet} {
+          height: 23px;
+          width: 48px;
+        }
+      }
+    }
+
+    &_icon_key {
+      background: url("./icons/key.svg") no-repeat;
+      height: 32px;
+      width: 35px;
+
+      @media #{$tablet} {
+        height: 45px;
+        width: 50px;
+      }
+
+      &_white {
+        background: url("./icons/key-white.svg") no-repeat;
+        height: 32px;
+        width: 35px;
+
+        @media #{$tablet} {
+          height: 45px;
+          width: 50px;
+        }
+      }
+    }
+
+    &_icon_robot-cleaner {
+      background: url("./icons/robot-cleaner.svg") no-repeat;
+      height: 21px;
+      width: 35px;
+
+      @media #{$tablet} {
+        height: 29px;
+        width: 50px;
+      }
+
+      &_white {
+        background: url("./icons/robot-cleaner-white.svg") no-repeat;
+        height: 21px;
+        width: 35px;
+
+        @media #{$tablet} {
+          height: 29px;
+          width: 50px;
+        }
+      }
+    }
+
+    &_icon_router {
+      background: url("./icons/router.svg") no-repeat;
+      height: 31px;
+      width: 34px;
+
+      @media #{$tablet} {
+        height: 49px;
+        width: 43px;
+      }
+
+      &_white {
+        background: url("./icons/router-white.svg") no-repeat;
+        height: 31px;
+        width: 34px;
+
+        @media #{$tablet} {
+          height: 49px;
+          width: 43px;
+        }
+      }
+    }
+
+    &_icon_thermal {
+      background: url("./icons/thermal.svg") no-repeat;
+      height: 35px;
+      width: 35px;
+
+      @media #{$tablet} {
+        height: 48px;
+        width: 48px;
+      }
+
+      &_white {
+        background: url("./icons/thermal-white.svg") no-repeat;
+        height: 35px;
+        width: 35px;
+
+        @media #{$tablet} {
+          height: 48px;
+          width: 48px;
+        }
+      }
+    }
+
+    &_icon_ac {
+      background: url("./icons/air-conditioner.svg") no-repeat;
+      height: 29px;
+      width: 35px;
+
+      @media #{$tablet} {
+        height: 41px;
+        width: 48px;
+      }
+
+      &_white {
+        background: url("./icons/ac-white.svg") no-repeat;
+        height: 29px;
+        width: 35px;
+
+        @media #{$tablet} {
+          height: 41px;
+          width: 48px;
+        }
+      }
+    }
+
+    &_icon_music {
+      background: url("./icons/music.svg") no-repeat;
+      height: 36px;
+      width: 36px;
+
+      @media #{$tablet} {
+        height: 52px;
+        width: 52px;
+      }
+
+      &_white {
+        background: url("./icons/music-white.svg") no-repeat;
+        height: 36px;
+        width: 36px;
+
+        @media #{$tablet} {
+          height: 52px;
+          width: 52px;
+        }
+      }
+    }
+
+    &_icon_fridge {
+      background: url("./icons/fridge.svg") no-repeat;
+      height: 35px;
+      width: 28px;
+
+      @media #{$tablet} {
+        height: 48px;
+        width: 39px;
+      }
+
+      &_white {
+        background: url("./icons/fridge-white.svg") no-repeat;
+        height: 35px;
+        width: 28px;
+
+        @media #{$tablet} {
+          height: 48px;
+          width: 39px;
+        }
+      }
+    }
+
+    &_icon_battery {
+      background: url("./icons/battery.svg") no-repeat;
+      height: 18px;
+      width: 35px;
+
+      @media #{$tablet} {
+        height: 25px;
+        width: 58px;
+      }
+
+      &_white {
+        background: url("./icons/battery-white.svg") no-repeat;
+        height: 18px;
+        width: 35px;
+
+        @media #{$tablet} {
+          height: 25px;
+          width: 58px;
+        }
+      }
+    }
+
+    &_icon_cam {
+      background: url("./icons/robot-cleaner.svg") no-repeat;
+      height: 36px;
+      width: 36px;
+
+      @media #{$tablet} {
+        height: 36px;
+        width: 50px;
+      }
+
+      &_white {
+        background: url("./icons/robot-cleaner-white.svg") no-repeat;
+        height: 36px;
+        width: 36px;
+
+        @media #{$tablet} {
+          height: 36px;
+          width: 50px;
+        }
+      }
+    }
+
+    &_icon_kettle {
+      background: url("./icons/kettle.svg") no-repeat;
+      height: 35px;
+      width: 30px;
+
+      @media #{$tablet} {
+        height: 48px;
+        width: 41px;
+      }
+
+      &_white {
+        background: url("./icons/kettle-white.svg") no-repeat;
+        height: 35px;
+        width: 30px;
+
+        @media #{$tablet} {
+          height: 48px;
+          width: 41px;
+        }
+
+        &_white {
+          background: url("./icons/kettle-white.svg") no-repeat;
+        }
+      }
+    }
+  }
+
+  &-Title {
+    grid-column: 2 / 11;
+    font-family: $font__main--bold;
+    font-size: rem(14px);
+    padding-left: 15px;
+    align-self: center;
+
+    @media #{$tablet--big} {
+      font-size: rem(16px)
+    }
+
+    &_size_s {
+      @media #{$mobile--big} {
+        grid-column: 3/11;
+        padding: 0;
+      }
+      @media #{$tablet} {
+        grid-column: 3/11;
+        padding-left: 20px;
+      }
+      @media #{$tablet--big} {
+        padding-left: 0;
+      }
+    }
+
+    &_size_m {
+      @media #{$mobile--big} {
+        grid-column: 3/11;
+        padding: 0;
+      }
+      @media #{$tablet--big} {
+        grid-column-start: 2;
+        padding-left: 20px;
+      }
+    }
+
+    &_size_l {
+      @media #{$mobile--big} {
+        padding-left: 0;
+      }
+      @media #{$tablet} {
+        grid-column: 2/11;
+        padding-left: 15px;
+      }
+      @media #{$tablet--big} {
+        padding-left: 0;
+      }
+    }
+  }
+
+  &-Name {
+    grid-column: 1 / 6;
+    font-family: $font__main;
+    font-size: rem(12px);
+    margin-top: 18px;
+
+    &_size_s {
+      @media #{$tablet} {
+        grid-column: span 10;
+        justify-self: left;
+      }
+    }
+
+  }
+
+  &-Date {
+    grid-column: 6 / 11;
+    justify-self: right;
+    font-family: $font__main;
+    font-size: rem(12px);
+    margin-top: 18px;
+
+    &_size_s {
+      @media #{$tablet} {
+        grid-column: span 10;
+        justify-self: left;
+      }
+    }
+  }
+
+  &-Data {
+    display: grid;
+    grid-template-columns: 100%;
+    height: 100%;
+    align-items: end;
+
+    &Container {
+      grid-column-start: 1;
+      grid-row-start: 2;
+      background: #FAFAFA;
+      color: $color__text;
+      padding: 25px 18px 20px 18px;
+      border-radius: 20px;
+      margin-top: -20px;
+    }
+  }
+
+  &-Description {
+    align-self: end;
+    font-family: $font__main;
+    font-size: rem(18px);
+
+    &_size_s {
+      @media #{$tablet} {
+        font-size: rem(14px);
+      }
+    }
+
+    &_size_m {
+      @media #{$tablet} {
+        font-size: rem(14px);
+      }
+    }
+
+    &_size_l {
+      @media #{$tablet} {
+        font-size: rem(16px);
+      }
+    }
+
+  }
+
+  &-Graph {
+    margin-top: 40px;
+  }
+
+  &-Microclimate {
+    margin-top: 20px;
+  }
+
+  &-Media {
+    margin-top: 20px;
+  }
+
+  &-Buttons {
+    margin-top: 20px;
+
+    &Wrapper {
+      display: grid;
+      grid-template-columns: minmax(100px, 132px) minmax(100px, 132px);
+      justify-content: space-between;
+      grid-template-rows: 1fr;
+      grid-column-gap: 15px;
+
+      @media #{$desktop} {
+        justify-content: start;
+        font-size: rem(16px);
+      }
+    }
+  }
+
+  &-Walle {
+    margin-top: 20px;
+  }
+}
