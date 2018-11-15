@@ -1,6 +1,6 @@
+import {cn} from '@bem-react/classname';
 import React, {Component} from 'react';
 import IEventData from '../../interfaces/IEventData';
-import {cn} from '@bem-react/classname';
 
 import Event from '../Event/Event'
 
@@ -20,7 +20,7 @@ export default class Events extends Component<{}, IEventsSate> {
     }
   }
 
-  componentDidMount() {
+  public componentDidMount() {
     fetch('https://smarthouse-server.herokuapp.com/api/events/', {method: 'POST'})
       .then(response => response.json())
       .then(json => {
@@ -28,7 +28,7 @@ export default class Events extends Component<{}, IEventsSate> {
       });
   }
 
-  render() {
+  public render() {
     const events = this.state.events.map((event, index) =>
       <div className={cnEvents('Event', {type: event.size}, ['Event'])} key={index}>
         <Event

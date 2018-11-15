@@ -1,12 +1,12 @@
+import {cn} from '@bem-react/classname';
+import {RegistryConsumer} from '@bem-react/di';
 import React from 'react';
 import IEventData from '../../interfaces/IEventData';
-import {RegistryConsumer} from '@bem-react/di';
-import {cn} from '@bem-react/classname';
 
-import Graph from '../Graph/Graph'
-import Microclimate from '../Microclimate/Microclimate'
-import Media from '../Media/Media'
 import {Button} from '../Button'
+import Graph from '../Graph/Graph'
+import Media from '../Media/Media'
+import Microclimate from '../Microclimate/Microclimate'
 import {cnWalle} from '../Walle/Walle'
 
 import './Event.scss';
@@ -19,14 +19,14 @@ const Event = (event: IEventData) => {
   return (
     <RegistryConsumer>
       {registries => {
-        const platform = registries['platform'];
+        const platform = registries.platform;
         const Walle = platform.get(cnWalle());
 
         return (
           <>
             <div className={cnEvent('Info', {critical: event.type === 'critical'})}>
               <div className={cnEvent('Wrapper')}>
-                <div className={cnEvent('Icon', {icon: icon, size: event.size})}/>
+                <div className={cnEvent('Icon', {icon, size: event.size})}/>
                 <div className={cnEvent('Title', {size: event.size})}>
                   {event.title}
                 </div>

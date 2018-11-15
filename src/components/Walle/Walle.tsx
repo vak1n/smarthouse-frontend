@@ -1,16 +1,16 @@
+import {cn} from '@bem-react/classname';
 import React, {Component, createRef, RefObject} from 'react'
 import {ITouch, Touch} from '../../modules/Touch';
-import {cn} from '@bem-react/classname';
 
 import './Walle.scss';
 
 export const cnWalle = cn('Walle');
 
 export class Walle extends Component<{}> {
-  imgNode: RefObject<HTMLImageElement>;
-  zoomNode: RefObject<HTMLInputElement>;
-  brightnessNode: RefObject<HTMLInputElement>;
-  touch: ITouch | null;
+  public imgNode: RefObject<HTMLImageElement>;
+  public zoomNode: RefObject<HTMLInputElement>;
+  public brightnessNode: RefObject<HTMLInputElement>;
+  public touch: ITouch | null;
 
   constructor(props: {}) {
     super(props);
@@ -20,13 +20,13 @@ export class Walle extends Component<{}> {
     this.touch = null;
   }
 
-  render() {
+  public render() {
     return (
       <div className={cnWalle()}>
-        <div className={cnWalle('ImgContianer')} touch-action="none">
-          <img ref={this.imgNode} className={cnWalle('Img')} touch-action="none"
-               sizes="(max-width: 2496px) 100vw, 2496px"
-               srcSet="
+        <div className={cnWalle('ImgContianer')} touch-action='none'>
+          <img ref={this.imgNode} className={cnWalle('Img')} touch-action='none'
+               sizes='(max-width: 2496px) 100vw, 2496px'
+               srcSet='
                     assets/robot_em9jpf_c_scale,w_580.jpg 580w,
                     assets/robot_em9jpf_c_scale,w_1166.jpg 1166w,
                     assets/robot_em9jpf_c_scale,w_1577.jpg 1577w,
@@ -35,10 +35,10 @@ export class Walle extends Component<{}> {
                     assets/robot_em9jpf_c_scale,w_2496.jpg 2496w
                     assets/bitmap1x.png 1x
                     assets/bitmap2x.png 2x
-                    assets/bitmap3x.png 3x"
-               src="assets/robot_em9jpf_c_scale,w_2496.jpg"
-               alt="walle"
-               title="walle"
+                    assets/bitmap3x.png 3x'
+               src='assets/robot_em9jpf_c_scale,w_2496.jpg'
+               alt='walle'
+               title='walle'
           />
         </div>
         <div className={cnWalle('Control')}>

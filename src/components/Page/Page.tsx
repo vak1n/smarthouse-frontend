@@ -1,9 +1,9 @@
-import React from 'react';
 import {cn} from '@bem-react/classname';
+import React from 'react';
 
-import Header from '../Header/Header'
-import Footer from '../Footer/Footer'
 import Events from '../Events/Events'
+import Footer from '../Footer/Footer'
+import Header from '../Header/Header'
 
 import './Page.scss';
 

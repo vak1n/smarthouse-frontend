@@ -1,9 +1,9 @@
-import React from 'react';
 import {cn} from '@bem-react/classname';
+import React from 'react';
 
+import {menu} from '../../const/menu';
 import Logo from '../Logo/Logo'
 import {Menu} from '../Menu'
-import {menu} from '../../const/menu';
 
 import './Header.scss';
 

@@ -1,6 +1,6 @@
+import {cn} from '@bem-react/classname';
 import React from 'react';
 import {IMenuProps} from './index';
-import {cn} from '@bem-react/classname';
 
 import './Menu.scss';
 

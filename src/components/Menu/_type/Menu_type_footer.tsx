@@ -1,7 +1,7 @@
-import React from 'react';
 import {withBemMod} from '@bem-react/core';
-import {Menu} from '../Menu';
+import React from 'react';
 import {IMenuProps} from '../index';
+import {Menu} from '../Menu';
 
 import './Menu_type_footer.scss'
 

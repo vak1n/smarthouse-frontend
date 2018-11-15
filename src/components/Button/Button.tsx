@@ -1,6 +1,6 @@
+import {cn} from '@bem-react/classname';
 import * as React from 'react';
 import {IButtonProps} from './index'
-import {cn} from '@bem-react/classname';
 
 import './Button.scss';
 

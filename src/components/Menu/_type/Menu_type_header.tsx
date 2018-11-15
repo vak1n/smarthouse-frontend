@@ -1,8 +1,8 @@
+import {cn} from '@bem-react/classname';
+import {ModBody, withBemMod} from '@bem-react/core';
 import React, {Component} from 'react';
-import {withBemMod, ModBody} from '@bem-react/core';
-import {Menu} from '../Menu';
 import {IMenuProps} from '../index';
-import {cn} from "@bem-react/classname";
+import {Menu} from '../Menu';
 
 import './Menu_type_header.scss'
 
@@ -20,11 +20,11 @@ class MenuHeaderComponent extends Component<IMenuProps, IMenuSate> {
     }
   }
 
-  toggleMobile() {
+  public toggleMobile() {
     this.setState((state) => ({mobileOpen: !state.mobileOpen}))
   }
 
-  render() {
+  public render() {
     const links = this.props.links.map((link, index) =>
       <li className={cnPage('Item', {type: this.props.type})} key={index}>
         <a className={cnPage('Link', {type: this.props.type, selected: index === 0})} href={link.href}>
