@@ -10,7 +10,8 @@
     "quotemark": [
       true,
       "single"
-    ]
+    ],
+    "jsx-no-bind": false
   },
   "rulesDirectory": []
 }
