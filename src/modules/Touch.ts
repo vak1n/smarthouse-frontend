@@ -10,7 +10,7 @@ export class Touch implements ITouch {
   public imgNode: HTMLImageElement;
   public zoomNode: HTMLInputElement;
   public brightnessNode: HTMLInputElement;
-  protected state: {[key: string]: PointerEvent[]};
+  protected state: { [key: string]: PointerEvent[] };
   protected zoom: number;
   protected deltaX: number;
   protected deltaY: number;

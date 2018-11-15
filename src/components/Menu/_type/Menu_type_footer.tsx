@@ -1,8 +1,8 @@
-import {withBemMod} from '@bem-react/core';
+import { withBemMod } from '@bem-react/core';
 import React from 'react';
-import {IMenuProps} from '../index';
-import {Menu} from '../Menu';
+import { IMenuProps } from '../index';
+import { Menu } from '../Menu';
 
-import './Menu_type_footer.scss'
+import './Menu_type_footer.scss';
 
-export const MenuTypeFooter = withBemMod<IMenuProps>('Menu', {type: 'footer'});
+export const MenuTypeFooter = withBemMod<IMenuProps>('Menu', { type: 'footer' });

@@ -6,23 +6,23 @@ export default interface IEventData {
   description: string | null;
   icon: string;
   data?: {
-    type?: string,
-    values?: object[],
+    type?: string;
+    values?: object[];
 
-    temperature?: number,
-    humidity?: number,
+    temperature?: number;
+    humidity?: number;
 
-    albumcover?: string,
-    artist?: string,
+    albumcover?: string;
+    artist?: string;
     track?: {
-      name: string,
-      length: string,
-    },
-    volume?: number,
+      name: string;
+      length: string;
+    };
+    volume?: number;
 
-    buttons?: string[],
+    buttons?: string[];
 
-    image?: string,
+    image?: string;
   };
   size: string;
 }

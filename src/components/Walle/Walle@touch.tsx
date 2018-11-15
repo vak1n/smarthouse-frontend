@@ -1,5 +1,5 @@
-import {Touch} from '../../modules/Touch';
-import {Walle as Base} from './Walle';
+import { Touch } from '../../modules/Touch';
+import { Walle as Base } from './Walle';
 
 export class Walle extends Base {
   public componentDidMount() {

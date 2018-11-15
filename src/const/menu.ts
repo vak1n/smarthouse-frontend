@@ -23,6 +23,6 @@ export const menu = {
     {
       href: '#videos',
       name: 'Видеонаблюдение',
-    }
-  ]
+    },
+  ],
 };
